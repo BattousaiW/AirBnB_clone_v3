@@ -11,7 +11,7 @@ import os
 app = Flask(__name__)
 
 host = os.environ.get(
-        'HBNB_API_PORT',
+        'HBNB_API_HOST',
         '0.0.0.0')
 port = int(os.environ.get(
         'HBNB_API_PORT',

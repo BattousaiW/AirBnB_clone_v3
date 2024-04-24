@@ -9,7 +9,6 @@ def status():
     """
     function for status route
     """
-    if request.method == 'GET':
-        response = {"status":
-                    "OK"}
-        return jsonify(response)
+    response = {"status":"OK"}
+    resp = jsonify(response)
+    return resp
