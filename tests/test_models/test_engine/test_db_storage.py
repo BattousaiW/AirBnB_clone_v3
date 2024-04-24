@@ -97,7 +97,7 @@ class TestFileStorage(unittest.TestCase):
         models.storage.new(new_state)
 
         session = models.storage._DBStorage__session
-        retrieve_state =session.query(State).filter_by(id=new_state).first()
+        retrieve_state = session.query(State).filter_by(id=new_state).first()
         self.assertEqual(retrieve_state.id, new_state.id)
         self.assertEqual(retrieve_state.name, new_state.name)
         self.assertIsNone(retrieve_state)
@@ -111,7 +111,7 @@ class TestFileStorage(unittest.TestCase):
         models.storage.save()
 
         session = models.storage._DBStorage__session
-        retrieve_state =session.query(State).filter_by(id=new_state).first()
+        retrieve_state = session.query(State).filter_by(id=new_state).first()
         self.assertEqual(retrieve_state.id, new_state.id)
         self.assertEqual(retrieve_state.name, new_state.name)
         self.assertIsNone(retrieve_state)
@@ -125,10 +125,12 @@ class TestFileStorage(unittest.TestCase):
 
         state_data = {"name": "Western Cape"}
         state_instance = State(**state_data)
+        storage.new(state_instance)
+        storage.save()
         retrieve_state = storage.get(State, state_instance.id)
         self.assertEqual(state_instance, retrieve_state)
         fake_state_id = storage.get(State, 'fake_id')
-        self.assertEqual(fake_state_id,None)
+        self.assertEqual(fake_state_id, None)
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count(self):
@@ -140,7 +142,7 @@ class TestFileStorage(unittest.TestCase):
         storage.new(state_instance)
 
         city_data = {"name": "Manhattan", "state_id": state_instance.id}
-        city_instance  = City(**city_data)
+        city_instance = City(**city_data)
         storage.new(city_instance)
         storage.save()
 
