@@ -21,10 +21,10 @@ def stats():
     stats of object routes
     """
     obj = {
-        "amenities": storage.count("Amenities"),
-        "cities": storage.count("Cities"),
-        "places": storage.count("Places"),
-        "reviews": storage.count("Reviews"),
+        "amenities": storage.count("Amenity"),
+        "cities": storage.count("City"),
+        "places": storage.count("Place"),
+        "reviews": storage.count("Review"),
         "states": storage.count("State"),
         "users": storage.count("User")
     }
