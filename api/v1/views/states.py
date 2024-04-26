@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for handling State objects and operations.
+Flask route that returns json status response
 """
 
 from flask import jsonify, abort, request
