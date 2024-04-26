@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-route for handling State objects and operations
+"""Route for handling State objects and operations.
 """
 from flask import jsonify, abort, request
 from api.v1.views import app_views, storage
@@ -95,3 +94,5 @@ def state_delete_by_id(state_id):
     storage.save()
 
     return jsonify({})
+
+
