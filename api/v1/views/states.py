@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-  """
-    updates specific State object by ID
-    :param state_id: state object ID
-    :return: state object and 200 on success, or 400 or 404 on failure
-    """
+"""
+route for handling State objects and operations
+"""
 from flask import jsonify, abort, request
 from api.v1.views import app_views, storage
 from models.state import State
